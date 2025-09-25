@@ -1,0 +1,9 @@
+com\theatre\model\Movie.class
+com\theatre\controller\TheatreController.class
+com\theatre\config\DatabaseConfig.class
+com\theatre\model\Show.class
+com\theatre\dao\ShowDAO.class
+com\theatre\model\Booking.class
+com\theatre\model\BookingRequest.class
+com\theatre\TheatreBookingApplication.class
+com\theatre\model\Seat.class
