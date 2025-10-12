@@ -28,9 +28,15 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
         </dependency>
+        
+        <!-- THIS DEPENDENCY WAS ADDED TO ENABLE HEALTH CHECKS -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        
     </dependencies>
 
-    <!-- START OF ADDED SECTION -->
     <build>
         <plugins>
             <!-- This plugin copies the frontend files into the final JAR -->
@@ -65,6 +71,5 @@
             </plugin>
         </plugins>
     </build>
-    <!-- END OF ADDED SECTION -->
     
 </project>
