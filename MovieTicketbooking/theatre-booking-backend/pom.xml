@@ -29,4 +29,42 @@
             <version>8.0.33</version>
         </dependency>
     </dependencies>
+
+    <!-- START OF ADDED SECTION -->
+    <build>
+        <plugins>
+            <!-- This plugin copies the frontend files into the final JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-frontend</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.outputDirectory}/static</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <!-- Path from this backend folder to your frontend folder -->
+                                    <directory>../theatre-booking-frontend</directory>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- This is the standard Spring Boot plugin to build the executable JAR -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- END OF ADDED SECTION -->
+    
 </project>
