@@ -25,13 +25,16 @@ jobs:
           distribution: 'microsoft'
 
       - name: Build with Maven
+        # This tells Maven to run inside your backend folder
+        working-directory: ./MovieTicketbooking/theatre-booking-backend
         run: mvn clean install
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          # This tells the uploader where to find the generated .jar file
+          path: '${{ github.workspace }}/MovieTicketbooking/theatre-booking-backend/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
@@ -60,4 +63,3 @@ jobs:
           app-name: 'MyTheatreBookingApp'
           slot-name: 'Production'
           package: '*.jar'
-          
