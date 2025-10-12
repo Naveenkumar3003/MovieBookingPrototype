@@ -29,10 +29,16 @@
             <version>8.0.33</version>
         </dependency>
         
-        <!-- THIS DEPENDENCY WAS ADDED TO ENABLE HEALTH CHECKS -->
+        <!-- Enables the /actuator/health endpoint for Azure -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- THIS DEPENDENCY WAS ADDED TO FIX THE LOGGING ERROR -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
         
     </dependencies>
