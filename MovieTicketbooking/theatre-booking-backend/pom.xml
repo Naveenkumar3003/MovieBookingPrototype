@@ -35,10 +35,10 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <!-- THIS DEPENDENCY WAS ADDED TO FIX THE LOGGING ERROR -->
+        <!-- THIS DEPENDENCY WAS ADDED to explicitly include the missing Logback classes -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
         </dependency>
         
     </dependencies>
